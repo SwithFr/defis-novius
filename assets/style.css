@@ -1,0 +1,54 @@
+h1 {
+    text-align : center;
+}
+
+input[type="checkbox"] {
+    display : none;
+}
+
+.login {
+    width      : 50%;
+    border     : 1px solid #999;
+    background : rgba(0, 0, 0, 0.1);
+    padding    : 30px;
+}
+
+.login label {
+    border  : 1px solid #000;
+    padding : 5px 10px;
+    display : inline-block;
+    float   : right;
+}
+
+.interface {
+    display : none;
+}
+
+#login-cbx:checked + .login {
+    display : none;
+}
+
+#login-cbx:checked ~ .interface {
+    display : block;
+}
+
+.addbox {
+    border     : 1px solid #999;
+    background : rgba(0, 0, 0, 0.1);
+    padding    : 30px;
+}
+
+.histogrammes {
+    list-style     : none;
+    display        : flex;
+    flex-direction : row;
+    align-items    : flex-end;
+    margin-bottom  : 1em;
+}
+
+.histogrammes > li {
+    margin-right : 1%;
+    width        : 24%;
+    background   : #2199e8;
+    text-align   : center;
+}
