@@ -89,18 +89,14 @@ if (isset($_GET['url'])) {
 			<h3>Durée totale des chansons uploadées ces 2 dernières heures</h3>
 
 			<ul class="histogrammes">
-				<li style="height: 60px">62 min</li>
-				<li style="height: 82px">85 min</li>
-				<li style="height: 40px">85 min</li>
-				<li style="height: 45px">85 min</li>
-				<li style="height: 50px">85 min</li>
-				<li style="height: 60px">85 min</li>
-				<li style="height: 43px">85 min</li>
-				<li style="height: 18px">16 min</li>
-				<li style="height: 79px">96 min</li>
-				<li style="height: 18px">85 min</li>
-				<li style="height: 06px">04 min</li>
-				<li style="height: 52px">85 min</li>
+				<?php
+				$durations = $DB->getDurations();
+				?>
+				<?php foreach($durations as $d): ?>
+					<li>
+						<li style="height: <?= $d['duration'] / 60 ?>px"><?= $d['duration'] ?> min</li>
+					</li>
+				<?php endforeach; ?>
 			</ul>
 
 			<h3>Catégorie préférée de chaque auteur</h3>

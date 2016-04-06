@@ -52,4 +52,12 @@ class Model {
 		$pdost = $this->DB->query("SELECT COUNT(sound_id) as total, cat_label FROM sound JOIN category ON cat_id = sound_cat_id GROUP BY cat_label LIMIT 3");
 		return $pdost->fetchAll();
 	}
+
+	public function getDurations()
+	{
+		$pdost = $this->DB->query("SELECT sound_duration_seconds as duration FROM sound LIMIT 10");
+		return $pdost->fetchAll();
+	}
+
+
 }
